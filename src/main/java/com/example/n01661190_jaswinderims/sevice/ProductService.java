@@ -40,6 +40,10 @@ public class ProductService {
             return true;
         }return  false;
     }
+    public Optional<Product> getProductById(Long id) {
+        return productRepository.findById(id);
+    }
+
     public Product UpdateStock(Long id,int stock){
         return productRepository.findById(id).map(product -> {
             product.setStock(stock);
